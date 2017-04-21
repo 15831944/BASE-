@@ -1,0 +1,39 @@
+<RCC>
+    <qresource prefix="/some/ico">
+        <file>ico/minus.png</file>
+        <file>ico/plus.png</file>
+        <file>ico/edit.png</file>
+        <file>ico/reload.png</file>
+        <file>ico/dropdownbutton.png</file>
+        <file>ico/configure.png</file>
+        <file>ico/remove.png</file>
+        <file>ico/database.png</file>
+        <file>ico/calendar-day.png</file>
+        <file>ico/calendar-month.png</file>
+        <file>ico/email-receive.png</file>
+        <file>ico/email-send.png</file>
+        <file>ico/email-new.png</file>
+        <file>ico/about.png</file>
+        <file>ico/trash.png</file>
+        <file>ico/File-History.png</file>
+        <file>ico/LoadToDatabase.png</file>
+        <file>ico/SaveFromDatabase.png</file>
+        <file>ico/document-list.png</file>
+        <file>ico/security.png</file>
+        <file>ico/publish.png</file>
+        <file>ico/DocProps.png</file>
+        <file>ico/recover.png</file>
+        <file>ico/purge.png</file>
+        <file>ico/exit.png</file>
+        <file>ico/DocEdit.png</file>
+        <file>ico/autocad.png</file>
+        <file>ico/DocNew.png</file>
+        <file>ico/search.png</file>
+        <file>ico/xrefs.png</file>
+        <file>ico/view.png</file>
+        <file>ico/shovel.png</file>
+        <file>ico/dollar.png</file>
+        <file>ico/copy.png</file>
+        <file>ico/table-excel.png</file>
+    </qresource>
+</RCC>

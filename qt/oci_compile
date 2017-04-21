@@ -1,0 +1,22 @@
+C:\Qt\qt-everywhere-opensource-src-5.5.0\qtbase\src\plugins\sqldrivers\oci\
+----------------------------------------------------------------
+from QT command line
+
+set INCLUDE=%INCLUDE%;C:\oracle\ora11-32-instant\include
+set LIB=%LIB%;C:\oracle\ora11-32-instant\lib\msvc
+
+qmake oci.pro
+
+----------------------------------------------------------------
+from MSVC command line
+
+set INCLUDE=%INCLUDE%;C:\oracle\ora11-32-instant\include
+set LIB=%LIB%;C:\oracle\ora11-32-instant\lib\msvc
+
+nmake
+
+----------------------------------------------------------------
+
+from C:\Qt\qt-everywhere-opensource-src-5.5.0\qtbase\plugins\sqldrivers\
+copy to v:\project\... only
+copy into working qt directories (C:\Qt\Qt5.3.2\5.3\msvc2010_opengl\plugins\sqldrivers\)

@@ -1,0 +1,12 @@
+#ifndef CONTRACTPKZ_GLOBAL_H
+#define CONTRACTPKZ_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(CONTRACTPKZ_LIBRARY)
+    #define CONTRACTPKZSHARED_EXPORT Q_DECL_EXPORT
+#else
+    #define CONTRACTPKZSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // CONTRACTPKZ_GLOBAL_H

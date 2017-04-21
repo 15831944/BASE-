@@ -1,0 +1,323 @@
+#include "GlobalSettings.h"
+
+RecordDataForCopyToAcad::RecordDataForCopyToAcad(RecordDataForCopyToAcad::enumSP, const QString &aFileName, long aProcessType, XrefPropsData *aXrefPropsData,
+                                                 const QList<XrefRenameData *> &aImageRenameList, ULONG aIdDwg) :
+
+    mXrefPropsData(aXrefPropsData), mImageRenameList(aImageRenameList)
+{
+    memset(&s1, 0, sizeof(s1));
+
+    s1.SP.ProcessType = aProcessType;
+    s1.SP.IdDwg = aIdDwg;
+
+
+    QString lFileName(aFileName);
+
+    lFileName.replace('/', '\\');
+
+    s1.SP.FileName[lFileName.length()] = 0;
+    lFileName.toWCharArray(s1.SP.FileName);
+}
+
+RecordDataForCopyToAcad::RecordDataForCopyToAcad(RecordDataForCopyToAcad::enumSP, const QString &aFileName, long aProcessType, const QList<XrefRenameData *> &aXrefRenameList,
+                                                 const QList<XrefRenameData *> &aImageRenameList, ULONG aIdDwg) :
+    mXrefPropsData(NULL), mXrefRenameList(aXrefRenameList), mImageRenameList(aImageRenameList)
+{
+    memset(&s1, 0, sizeof(s1));
+
+    s1.SP.ProcessType = aProcessType;
+    s1.SP.IdDwg = aIdDwg;
+
+    QString lFileName(aFileName);
+
+    lFileName.replace('/', '\\');
+
+    s1.SP.FileName[lFileName.length()] = 0;
+    lFileName.toWCharArray(s1.SP.FileName);
+}
+
+RecordDataForCopyToAcad::RecordDataForCopyToAcad(RecordDataForCopyToAcad::enumVE, ULONG aIdPlot, ULONG aIdDwgForPlot, ULONG aIdDwgEditForPlot, bool aSkipWarning) :
+    mXrefPropsData(NULL)
+{
+    memset(&s1, 0, sizeof(s1));
+
+    s1.VE.IdPlot = aIdPlot;
+    s1.VE.IdDwgForPlot = aIdDwgForPlot;
+    s1.VE.IdDwgEditForPlot = aIdDwgEditForPlot;
+    s1.VE.SkipWarning = aSkipWarning;
+
+}
+
+RecordDataForCopyToAcad::RecordDataForCopyToAcad(RecordDataForCopyToAcad::enumLP, const QString &aFileName) :
+    mXrefPropsData(NULL)
+{
+    memset(&s1, 0, sizeof(s1));
+
+    QString lFileName(aFileName);
+
+    lFileName.replace('/', '\\');
+
+    s1.LP.FileName[lFileName.length()] = 0;
+    lFileName.toWCharArray(s1.LP.FileName);
+}
+
+RecordDataForCopyToAcad::RecordDataForCopyToAcad(RecordDataForCopyToAcad::enumAP, ULONG aIdPlot) :
+    mXrefPropsData(NULL)
+{
+    memset(&s1, 0, sizeof(s1));
+
+    s1.AP.IdPlot = aIdPlot;
+}
+
+RecordDataForCopyToAcad::RecordDataForCopyToAcad(RecordDataForCopyToAcad::enumPUB, ULONG aIdPlot, ULONG aIdDwgForPlot, quint64 aLayouts) :
+    mXrefPropsData(NULL)
+{
+    memset(&s1, 0, sizeof(s1));
+
+    s1.PUB.IdPlot = aIdPlot;
+    s1.PUB.IdDwgForPlot = aIdDwgForPlot;
+    s1.PUB.Layouts = aLayouts;
+}
+
+RecordDataForCopyToAcad::RecordDataForCopyToAcad(RecordDataForCopyToAcad::enumCMP, const PlotHistoryData *aHistoryOld, const PlotHistoryData *aHistoryNew) :
+    mXrefPropsData(NULL)
+{
+    memset(&s1, 0, sizeof(s1));
+
+    QString lDateStr;
+
+    s1.CMP.IdPlotOld = aHistoryOld->IdPlot();
+    s1.CMP.IdDwgOld = aHistoryOld->Id();
+    s1.CMP.HistNumOld = aHistoryOld->Num();
+    lDateStr = aHistoryOld->WhenConst().toString("dd.MM.yyyy");
+    s1.CMP.DateOld[lDateStr.length()] = 0;
+    lDateStr.toWCharArray(s1.CMP.DateOld);
+
+    s1.CMP.IdPlotNew = aHistoryNew->IdPlot();
+    s1.CMP.IdDwgNew = aHistoryNew->Id();
+    s1.CMP.HistNumNew = aHistoryNew->Num();
+    lDateStr = aHistoryNew->WhenConst().toString("dd.MM.yyyy");
+    s1.CMP.DateNew[lDateStr.length()] = 0;
+    lDateStr.toWCharArray(s1.CMP.DateNew);
+}
+
+RecordDataForCopyToAcad::RecordDataForCopyToAcad(enumRT, ULONG aIdPlot) :
+    mXrefPropsData(NULL)
+{
+    memset(&s1, 0, sizeof(s1));
+
+    s1.RT.IdPlot = aIdPlot;
+}
+
+RecordDataForCopyToAcad::~RecordDataForCopyToAcad() {
+    qDeleteAll(mXrefRenameList);
+    qDeleteAll(mImageRenameList);
+}
+
+void *RecordDataForCopyToAcad::GetDataBuffer() {
+    return &s1;
+}
+
+long RecordDataForCopyToAcad::GetDataSize() {
+    return sizeof(s1Type);
+}
+
+XrefPropsData * RecordDataForCopyToAcad::XrefPropsRef() {
+    return mXrefPropsData;
+}
+
+const XrefPropsData * RecordDataForCopyToAcad::XrefPropsConst() const {
+    return mXrefPropsData;
+}
+
+QList<XrefRenameData *> &RecordDataForCopyToAcad::XrefRenameListRef() {
+    return mXrefRenameList;
+}
+
+QList<XrefRenameData *> &RecordDataForCopyToAcad::ImageRenameListRef() {
+    return mImageRenameList;
+}
+
+//------------------------------------------------------------------------
+MainDataForCopyToAcad::MainDataForCopyToAcad(long aWhatToDo, WId aWinId) {
+    memset(&s1, 0, sizeof(s1));
+    s1.mWhatToDo = aWhatToDo;
+    s1.mWinId = aWinId;
+}
+
+MainDataForCopyToAcad::MainDataForCopyToAcad(long aWhatToDo, bool aWithoutXrefs) {
+    memset(&s1, 0, sizeof(s1));
+    s1.mWhatToDo = aWhatToDo;
+    s1.VIEW.WithoutXrefs = aWithoutXrefs?1:0;
+}
+
+MainDataForCopyToAcad::MainDataForCopyToAcad(ULONG aProcessType, ULONG aColorBlocks, ULONG aColorEntities, ULONG aLWBlocks, ULONG aLWEntities,
+                                             const QString &aLayer0Name,  const QString &aUserCommands,  WId aWinId) {
+    memset(&s1, 0, sizeof(s1));
+    s1.mWhatToDo = 3; // LOAD
+    s1.mWinId = aWinId;
+
+    s1.LOAD.ProcessType = aProcessType;
+    s1.LOAD.ColorBlocks = aColorBlocks;
+    s1.LOAD.ColorEntities = aColorEntities;
+    s1.LOAD.LWBlocks = aLWBlocks;
+    s1.LOAD.LWEntities = aLWEntities;
+
+    s1.LOAD.Layer0Name[aLayer0Name.length()] = 0;
+    aLayer0Name.toWCharArray(s1.LOAD.Layer0Name);
+
+    s1.LOAD.UserCommands[aUserCommands.length()] = 0;
+    aUserCommands.toWCharArray(s1.LOAD.UserCommands);
+}
+
+MainDataForCopyToAcad::MainDataForCopyToAcad(long aPurgeRegapps, long aPurgeAll, long aExplodeProxy, long aRemoveProxy, long aAudit, WId aWinId) {
+    memset(&s1, 0, sizeof(s1));
+    s1.mWhatToDo = 4; // AUDIT
+    s1.mWinId = aWinId;
+
+    s1.AUDIT.PurgeRegapps = aPurgeRegapps;
+    s1.AUDIT.PurgeAll = aPurgeAll;
+    s1.AUDIT.ExplodeProxy = aExplodeProxy;
+    s1.AUDIT.RemoveProxy = aRemoveProxy;
+    s1.AUDIT.Audit = aAudit;
+}
+
+MainDataForCopyToAcad::MainDataForCopyToAcad(long aPDF, long aDWF, long aPLT, long aDontScale, long aUseVersion, long aCTBType, const QString &aCTBName, const QString &aPlotterName, const QString &aOutDir, WId aWinId) {
+    memset(&s1, 0, sizeof(s1));
+    s1.mWhatToDo = 5; // PUBLISH
+    s1.mWinId = aWinId;
+
+    s1.PUBLISH.PDF = aPDF;
+    s1.PUBLISH.DWF = aDWF;
+    s1.PUBLISH.PLT = aPLT;
+
+    s1.PUBLISH.DontScale = aDontScale;
+
+    s1.PUBLISH.PDFDiagn = 1;
+    s1.PUBLISH.PLTDiagn = 1;
+
+    s1.PUBLISH.UseVersion = aUseVersion;
+    s1.PUBLISH.CTBType = aCTBType;
+
+    s1.PUBLISH.CTBName[aCTBName.length()] = 0;
+    aCTBName.toWCharArray(s1.PUBLISH.CTBName);
+
+    s1.PUBLISH.PlotterName[aPlotterName.length()] = 0;
+    aPlotterName.toWCharArray(s1.PUBLISH.PlotterName);
+
+    s1.PUBLISH.OutDir[aOutDir.length()] = 0;
+    aOutDir.toWCharArray(s1.PUBLISH.OutDir);
+}
+
+//MainDataForCopyToAcad::MainDataForCopyToAcad(ULONG aVersion, ULONG aType, ULONG aOldColor, ULONG aNewColor, WId aWinId) {
+//    memset(&s1, 0, sizeof(s1));
+//    s1.mWhatToDo = 7; // COMPARE
+//    s1.mWinId = aWinId;
+
+//    s1.COMPARE.Version = aVersion;
+//    s1.COMPARE.Type = aType;
+
+//    s1.COMPARE.OldColor = aOldColor;
+//    s1.COMPARE.NewColor = aNewColor;
+//}
+
+MainDataForCopyToAcad::MainDataForCopyToAcad(ULONG aVersion, ULONG aType, const QString &aOutDit4Pdf, WId aWinId) {
+    memset(&s1, 0, sizeof(s1));
+    s1.mWhatToDo = 7; // COMPARE
+    s1.mWinId = aWinId;
+
+    s1.COMPARE.Version = aVersion;
+    s1.COMPARE.Type = aType;
+
+    s1.COMPARE.OldColor = gSettings->Compare.OldColor;
+    s1.COMPARE.NewColor = gSettings->Compare.NewColor;
+
+    s1.COMPARE.OutDir4Pdf[aOutDit4Pdf.length()] = 0;
+    aOutDit4Pdf.toWCharArray(s1.COMPARE.OutDir4Pdf);
+}
+
+MainDataForCopyToAcad::MainDataForCopyToAcad(const QString &aFindWhat, const QString &aReplaceWith,
+                                             long aMoveType, double aDX, double aDY, WId aWinId) {
+    memset(&s1, 0, sizeof(s1));
+    s1.mWhatToDo = 8; // REPLACETEXT
+    s1.mWinId = aWinId;
+
+    s1.REPLACETEXT.FindWhat[aFindWhat.length()] = 0;
+    aFindWhat.toWCharArray(s1.REPLACETEXT.FindWhat);
+
+    s1.REPLACETEXT.ReplaceWith[aReplaceWith.length()] = 0;
+    aReplaceWith.toWCharArray(s1.REPLACETEXT.ReplaceWith);
+
+    s1.REPLACETEXT.MoveType = aMoveType;
+    s1.REPLACETEXT.DX = aDX;
+    s1.REPLACETEXT.DY = aDY;
+}
+
+MainDataForCopyToAcad::~MainDataForCopyToAcad() {
+    qDeleteAll(mList);
+}
+
+void *MainDataForCopyToAcad::GetDataBuffer() {
+    return &s1;
+}
+
+long MainDataForCopyToAcad::GetDataSize() {
+    return sizeof(s1Type);
+}
+
+long MainDataForCopyToAcad::WhatToDo() const {
+    return s1.mWhatToDo;
+}
+
+void MainDataForCopyToAcad::SetSaveAcadVersion(long aSaveAcadVersion) {
+    s1.SAVE.SaveAcadVersion = aSaveAcadVersion;
+}
+
+QList<RecordDataForCopyToAcad *> &MainDataForCopyToAcad::ListRef() {
+    return mList;
+}
+
+const QList<RecordDataForCopyToAcad *> &MainDataForCopyToAcad::ListConst() const {
+    return mList;
+}
+
+//------------------------------------------------------------------------
+RecordDataFromAcad::RecordDataFromAcad() {
+    memset(&s1, 0, sizeof(s1));
+}
+
+void *RecordDataFromAcad::GetDataBuffer() {
+    return &s1;
+}
+
+long RecordDataFromAcad::GetDataSize() {
+    return sizeof(s1Type);
+}
+
+RecordDataFromAcad::enumDataType RecordDataFromAcad::DataType() const {
+    return s1.mDataType;
+}
+
+QString RecordDataFromAcad::MFFileNameOld() const {
+    return QString::fromWCharArray(s1.MF.mFileNameOld);
+}
+
+QString RecordDataFromAcad::MFFileNameNew() const {
+    return QString::fromWCharArray(s1.MF.mFileNameNew);
+}
+
+QString RecordDataFromAcad::AFFileName() const {
+    return QString::fromWCharArray(s1.AF.mFileName);
+}
+
+QString RecordDataFromAcad::AFGroup() const {
+    return QString::fromWCharArray(s1.AF.mGroup);
+}
+
+int RecordDataFromAcad::PUBId() const {
+    return s1.PUB.Id;
+}
+
+int RecordDataFromAcad::PUBWhatToDo() const {
+    return s1.PUB.WhatToDo;
+}

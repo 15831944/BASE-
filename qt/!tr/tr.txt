@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="he_IL">
+<context>
+    <name>LoggerWnd</name>
+    <message>
+        <location filename="LoggerWnd.ui" line="14"/>
+        <source>Logger</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="LoggerWnd.ui" line="35"/>
+        <source>Clear &amp;&amp; close</source>
+        <translation type="unfinished">נקה וסגור</translation>
+    </message>
+</context>
+</TS>
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="he_IL">
+<context>
+    <name>LoginDlg</name>
+    <message>
+        <location filename="LoginDlg.ui" line="14"/>
+        <source>Login</source>
+        <translation type="unfinished">כניסה</translation>
+    </message>
+    <message>
+        <location filename="LoginDlg.ui" line="28"/>
+        <source>Name</source>
+        <translation type="unfinished">שם</translation>
+    </message>
+    <message>
+        <location filename="LoginDlg.ui" line="48"/>
+        <source>Password</source>
+        <translation type="unfinished">סיסמא</translation>
+    </message>
+    <message>
+        <location filename="LoginDlg.ui" line="61"/>
+        <source>Base</source>
+        <translation type="unfinished">בסיס</translation>
+    </message>
+    <message>
+        <location filename="LoginDlg.ui" line="74"/>
+        <source>Language</source>
+        <translation type="unfinished">שפה</translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <location filename="OracleHelper.cpp" line="297"/>
+        <location filename="OracleHelper.cpp" line="302"/>
+        <location filename="OracleHelper.cpp" line="325"/>
+        <location filename="OracleHelper.cpp" line="333"/>
+        <source>Loading document</source>
+        <translation type="unfinished">טעינת מסמך</translation>
+    </message>
+</context>
+</TS>
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="he_IL">
+<context>
+    <name>DwgCmpSettingsDlg</name>
+    <message>
+        <location filename="DwgCmpSettingsDlg.ui" line="14"/>
+        <location filename="DwgCmpSettingsDlg.cpp" line="53"/>
+        <location filename="DwgCmpSettingsDlg.cpp" line="60"/>
+        <source>Comparing settings</source>
+        <translation type="unfinished">השוואת הגדרות</translation>
+    </message>
+    <message>
+        <location filename="DwgCmpSettingsDlg.ui" line="28"/>
+        <source>Color index for old version</source>
+        <translation type="unfinished">אינדקס צבע של הגרסה הישנה</translation>
+    </message>
+    <message>
+        <location filename="DwgCmpSettingsDlg.ui" line="71"/>
+        <source>Color index for new version</source>
+        <translation type="unfinished">אינדקס צבע של הגרסה החדשה</translation>
+    </message>
+    <message>
+        <location filename="DwgCmpSettingsDlg.ui" line="114"/>
+        <source>1 - red, 2 - yellow, 3 - green, 4 - cyan, 5 - blue, 6 - magenta, 7 - white...</source>
+        <translation type="unfinished">1 - אדום, 2 - צהוב, 3 - ירוק, 4 – כחול-ירוק, 5 - כחול, 6 - ארגמן, 7 - לבן...</translation>
+    </message>
+    <message>
+        <location filename="DwgCmpSettingsDlg.ui" line="121"/>
+        <source>Output dates</source>
+        <translation type="unfinished">תאריך פלט</translation>
+    </message>
+    <message>
+        <location filename="DwgCmpSettingsDlg.ui" line="130"/>
+        <source>Text height in mm</source>
+        <translation type="unfinished">גובה טקסט בממ</translation>
+    </message>
+    <message>
+        <location filename="DwgCmpSettingsDlg.ui" line="189"/>
+        <source>Always ask output directory</source>
+        <translation type="unfinished">תמיד לשאול ספריית פלט</translation>
+    </message>
+    <message>
+        <location filename="DwgCmpSettingsDlg.ui" line="196"/>
+        <source>Output directory for PDF</source>
+        <translation type="unfinished">ספריית פלט עבור PDF</translation>
+    </message>
+    <message>
+        <location filename="DwgCmpSettingsDlg.ui" line="218"/>
+        <source>Always ask parameters before start</source>
+        <translation type="unfinished">תמיד לשאול פרמטרים לפני התחלה</translation>
+    </message>
+    <message>
+        <location filename="DwgCmpSettingsDlg.ui" line="229"/>
+        <source>OK</source>
+        <translation type="unfinished">אוקיי</translation>
+    </message>
+    <message>
+        <location filename="DwgCmpSettingsDlg.ui" line="236"/>
+        <source>Cancel</source>
+        <translation type="unfinished">ביטול</translation>
+    </message>
+    <message>
+        <location filename="DwgCmpSettingsDlg.cpp" line="53"/>
+        <source>Colors must be different!</source>
+        <translation type="unfinished">צבעים חייבים להיות שונים!</translation>
+    </message>
+    <message>
+        <location filename="DwgCmpSettingsDlg.cpp" line="60"/>
+        <source>Output directory must be specified!</source>
+        <translation type="unfinished">ספריית פלט חייבת להיות מפורטת!</translation>
+    </message>
+</context>
+<context>
+    <name>WorkByDateUser</name>
+    <message>
+        <location filename="workbydateuser.ui" line="14"/>
+        <location filename="workbydateuser.cpp" line="303"/>
+        <location filename="workbydateuser.cpp" line="416"/>
+        <location filename="workbydateuser.cpp" line="704"/>
+        <location filename="workbydateuser.cpp" line="724"/>
+        <location filename="workbydateuser.cpp" line="743"/>
+        <location filename="workbydateuser.cpp" line="755"/>
+        <location filename="workbydateuser.cpp" line="760"/>
+        <source>Work report</source>
+        <translation type="unfinished">דוח עבודה</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="32"/>
+        <location filename="workbydateuser.ui" line="364"/>
+        <source>Project</source>
+        <translation type="unfinished">פרויקט</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="79"/>
+        <source>with constructions</source>
+        <translation type="unfinished">עם מבנה</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="90"/>
+        <source>User</source>
+        <translation type="unfinished">משתמש</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="107"/>
+        <source>From</source>
+        <translation type="unfinished">מ</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="124"/>
+        <source>till</source>
+        <translation type="unfinished">עד</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="154"/>
+        <source>Grouping</source>
+        <translation type="unfinished">הקבצה</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="165"/>
+        <source>None</source>
+        <translation type="unfinished">כלל לא</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="170"/>
+        <source>By document</source>
+        <translation type="unfinished">לפי מסמך</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="175"/>
+        <source>By versions</source>
+        <translation type="unfinished">לפי גרסאות</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="189"/>
+        <source>Show</source>
+        <translation type="unfinished">הראה</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="220"/>
+        <source>Spent selected</source>
+        <translation type="unfinished">זמן נבחר</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="266"/>
+        <source>Spent all</source>
+        <translation type="unfinished">סך הכל מבוזבז</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="323"/>
+        <source>Data is loaded in, sec:</source>
+        <translation type="unfinished">טעינת נתונים בעוד, שנייה:</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="356"/>
+        <source>ID proj.</source>
+        <translation type="unfinished">ID פרויקט.</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="377"/>
+        <source>ID common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="385"/>
+        <source>Del</source>
+        <translation type="unfinished">להסיר</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="388"/>
+        <source>Deleted</source>
+        <translation type="unfinished">נמחק</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="396"/>
+        <source>Work</source>
+        <translation type="unfinished">עבודה</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="399"/>
+        <source>Working</source>
+        <translation type="unfinished">עובד</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="407"/>
+        <source>Hist. in</source>
+        <translation type="unfinished">הסטוריית קלט</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="415"/>
+        <source>Hist. out</source>
+        <translation type="unfinished">הסטוריית פלט</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="423"/>
+        <source>Hist.last</source>
+        <translation type="unfinished">היסטוריית אחרון</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="431"/>
+        <source>Spent</source>
+        <translation type="unfinished">מבוזבז</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="439"/>
+        <source>Ver. int.</source>
+        <translation type="unfinished">גרסא פנימית</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="447"/>
+        <source>Ver. ext.</source>
+        <translation type="unfinished">גרסא חיצונית</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="455"/>
+        <source>Code</source>
+        <translation type="unfinished">קוד</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="463"/>
+        <source>Sheet</source>
+        <translation type="unfinished">דף</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="471"/>
+        <source>Name top</source>
+        <translation type="unfinished">שם למעלה</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="476"/>
+        <source>Name bottom</source>
+        <translation type="unfinished">שם למטה</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="481"/>
+        <source>Edited</source>
+        <translation type="unfinished">ערוך</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="489"/>
+        <source>Start</source>
+        <translation type="unfinished">התחלה.</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="497"/>
+        <source>End</source>
+        <translation type="unfinished">סיום.</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="505"/>
+        <source>Save count</source>
+        <translation type="unfinished">שמור ספירה</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="513"/>
+        <source>Edited by</source>
+        <translation type="unfinished">נערך על ידי</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.ui" line="518"/>
+        <source>Filename</source>
+        <translation type="unfinished">שם קובץ</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.cpp" line="84"/>
+        <source>&lt;Everyone&gt;</source>
+        <translation type="unfinished">&lt;Everyone&gt;</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.cpp" line="303"/>
+        <source>Start date must be less than or equal to end date!</source>
+        <translation type="unfinished">תאריך התחלה חייב להיות קטן או שווה לתאריך סיום!</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.cpp" line="427"/>
+        <source>Working...</source>
+        <translation type="unfinished">עובד...</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.cpp" line="527"/>
+        <source>Expand all</source>
+        <translation type="unfinished">להרחיב הכל</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.cpp" line="528"/>
+        <source>Collapse all</source>
+        <translation type="unfinished">לכווץ הכל</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.cpp" line="567"/>
+        <source>View</source>
+        <translation type="unfinished">ראה</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.cpp" line="568"/>
+        <source>Go to document</source>
+        <translation type="unfinished">לעבור למסמך</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.cpp" line="570"/>
+        <source>History</source>
+        <translation type="unfinished">היסטוריה</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.cpp" line="636"/>
+        <source>Compare in AutoCAD (visual)</source>
+        <translation type="unfinished">להשוות באוטוקד</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.cpp" line="640"/>
+        <source>Compare to PDF</source>
+        <translation type="unfinished">השווה לPDF</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.cpp" line="643"/>
+        <source>Copy to clipboard</source>
+        <translation type="unfinished">העתק ללוח עריכה</translation>
+    </message>
+    <message>
+        <location filename="workbydateuser.cpp" line="704"/>
+        <source>Can&apos;t create directory</source>
+        <translation type="unfinished">לא יכול ליצור ספרייה</translation>
+    </message>
+</context>
+</TS>
+
+

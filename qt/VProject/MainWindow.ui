@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>907</width>
+    <height>664</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource1.qrc">
+    <normaloff>:/some/ico/ico/database.png</normaloff>:/some/ico/ico/database.png</iconset>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>32</width>
+    <height>32</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QMdiArea" name="mdiArea">
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="activationOrder">
+       <enum>QMdiArea::StackingOrder</enum>
+      </property>
+      <property name="documentMode">
+       <bool>true</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
+      <property name="tabsMovable">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>907</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMain">
+    <property name="title">
+     <string>Main</string>
+    </property>
+    <addaction name="actionProjects"/>
+    <addaction name="actionContracts"/>
+    <addaction name="actionContracts_2"/>
+    <addaction name="actionSubcontracts"/>
+    <addaction name="separator"/>
+    <addaction name="actionFind"/>
+    <addaction name="actionQuick_find_by_id"/>
+    <addaction name="actionDeleted_documents"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <widget class="QMenu" name="menuAutoCAD">
+     <property name="locale">
+      <locale language="English" country="UnitedStates"/>
+     </property>
+     <property name="title">
+      <string>AutoCAD</string>
+     </property>
+     <property name="icon">
+      <iconset resource="resource1.qrc">
+       <normaloff>:/some/ico/ico/autocad.png</normaloff>:/some/ico/ico/autocad.png</iconset>
+     </property>
+     <addaction name="actionSelect_AutoCAD"/>
+     <addaction name="actionComparing_in_AutoCAD"/>
+    </widget>
+    <addaction name="actionCommonSettings"/>
+    <addaction name="actionProject_list"/>
+    <addaction name="actionDocuments_list"/>
+    <addaction name="actionImage_settings"/>
+    <addaction name="menuAutoCAD"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="locale">
+     <locale language="English" country="UnitedStates"/>
+    </property>
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuWindow">
+    <property name="title">
+     <string>Window</string>
+    </property>
+    <addaction name="actionNext"/>
+    <addaction name="actionPrevious"/>
+    <addaction name="separator"/>
+    <addaction name="actionTile"/>
+    <addaction name="actionCascade"/>
+    <addaction name="separator"/>
+    <addaction name="actionClose_all"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuReports">
+    <property name="title">
+     <string>Reports</string>
+    </property>
+    <addaction name="actionDrawings_audit"/>
+    <addaction name="actionDrawings_publish"/>
+    <addaction name="actionUsers_work"/>
+    <addaction name="actionSaved_documents"/>
+   </widget>
+   <widget class="QMenu" name="menuCatalogs">
+    <property name="title">
+     <string>Catalogs</string>
+    </property>
+    <addaction name="actionEmployees"/>
+    <addaction name="actionDepartments"/>
+    <addaction name="actionOrganizations"/>
+    <addaction name="separator"/>
+    <addaction name="actionGeobases"/>
+    <addaction name="separator"/>
+    <addaction name="actionProject_types"/>
+    <addaction name="actionDocuments_tree"/>
+   </widget>
+   <widget class="QMenu" name="menuService">
+    <property name="title">
+     <string>Service</string>
+    </property>
+    <addaction name="actionScheduler"/>
+    <addaction name="actionPlanner_day"/>
+    <addaction name="separator"/>
+    <addaction name="actionSend_message"/>
+    <addaction name="actionMessages_to_me"/>
+    <addaction name="actionMessages_from_me"/>
+    <addaction name="separator"/>
+    <addaction name="actionChange_password"/>
+   </widget>
+   <widget class="QMenu" name="menuQuit">
+    <property name="locale">
+     <locale language="English" country="UnitedStates"/>
+    </property>
+    <property name="title">
+     <string>Quit</string>
+    </property>
+    <addaction name="actionQuit"/>
+    <addaction name="actionQuit_and_reset"/>
+   </widget>
+   <widget class="QMenu" name="menuServer_settings">
+    <property name="title">
+     <string>Server settings</string>
+    </property>
+    <addaction name="actionRestrictions_on_savings"/>
+   </widget>
+   <widget class="QMenu" name="menuCorrespondence">
+    <property name="title">
+     <string>Correspondence</string>
+    </property>
+    <widget class="QMenu" name="menuReports_2">
+     <property name="title">
+      <string>Reports</string>
+     </property>
+     <addaction name="actionWeekly_report_old"/>
+     <addaction name="actionLetters_list"/>
+    </widget>
+    <addaction name="actionIncoming"/>
+    <addaction name="actionOutgouing"/>
+    <addaction name="separator"/>
+    <addaction name="menuReports_2"/>
+    <addaction name="separator"/>
+    <addaction name="actionTemplates_for_outgoing"/>
+   </widget>
+   <addaction name="menuMain"/>
+   <addaction name="menuService"/>
+   <addaction name="menuCorrespondence"/>
+   <addaction name="menuCatalogs"/>
+   <addaction name="menuReports"/>
+   <addaction name="menuSettings"/>
+   <addaction name="menuServer_settings"/>
+   <addaction name="menuWindow"/>
+   <addaction name="menuHelp"/>
+   <addaction name="menuQuit"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionProjects">
+   <property name="icon">
+    <iconset resource="resource1.qrc">
+     <normaloff>:/some/ico/ico/shovel.png</normaloff>:/some/ico/ico/shovel.png</iconset>
+   </property>
+   <property name="text">
+    <string>Projects</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionCommonSettings">
+   <property name="icon">
+    <iconset resource="resource1.qrc">
+     <normaloff>:/some/ico/ico/configure.png</normaloff>:/some/ico/ico/configure.png</iconset>
+   </property>
+   <property name="text">
+    <string>Common...</string>
+   </property>
+  </action>
+  <action name="actionProject_list">
+   <property name="text">
+    <string>Projects list...</string>
+   </property>
+  </action>
+  <action name="actionDocuments_list">
+   <property name="text">
+    <string>Documents list...</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="resource1.qrc">
+     <normaloff>:/some/ico/ico/about.png</normaloff>:/some/ico/ico/about.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutRole</enum>
+   </property>
+  </action>
+  <action name="actionContracts">
+   <property name="icon">
+    <iconset resource="resource1.qrc">
+     <normaloff>:/some/ico/ico/dollar.png</normaloff>:/some/ico/ico/dollar.png</iconset>
+   </property>
+   <property name="text">
+    <string>חוזים</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionTile">
+   <property name="text">
+    <string>Tile</string>
+   </property>
+  </action>
+  <action name="actionCascade">
+   <property name="text">
+    <string>Cascade</string>
+   </property>
+  </action>
+  <action name="actionClose_all">
+   <property name="text">
+    <string>Close all</string>
+   </property>
+  </action>
+  <action name="actionNext">
+   <property name="text">
+    <string>Next</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+[</string>
+   </property>
+  </action>
+  <action name="actionPrevious">
+   <property name="text">
+    <string>Previous</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+]</string>
+   </property>
+  </action>
+  <action name="actionQuick_find_by_id">
+   <property name="icon">
+    <iconset resource="resource1.qrc">
+     <normaloff>:/some/ico/ico/search.png</normaloff>:/some/ico/ico/search.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quick find (by id)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionDrawings_audit">
+   <property name="text">
+    <string>Drawings audit</string>
+   </property>
+  </action>
+  <action name="actionDrawings_publish">
+   <property name="text">
+    <string>Drawings publish</string>
+   </property>
+  </action>
+  <action name="actionSelect_AutoCAD">
+   <property name="text">
+    <string>AutoCAD settings...</string>
+   </property>
+  </action>
+  <action name="actionScheduler">
+   <property name="icon">
+    <iconset resource="resource1.qrc">
+     <normaloff>:/some/ico/ico/calendar-month.png</normaloff>:/some/ico/ico/calendar-month.png</iconset>
+   </property>
+   <property name="text">
+    <string>Planner</string>
+   </property>
+  </action>
+  <action name="actionPlanner_day">
+   <property name="icon">
+    <iconset resource="resource1.qrc">
+     <normaloff>:/some/ico/ico/calendar-day.png</normaloff>:/some/ico/ico/calendar-day.png</iconset>
+   </property>
+   <property name="text">
+    <string>Planner day</string>
+   </property>
+  </action>
+  <action name="actionSend_message">
+   <property name="icon">
+    <iconset resource="resource1.qrc">
+     <normaloff>:/some/ico/ico/email-new.png</normaloff>:/some/ico/ico/email-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>Send message</string>
+   </property>
+  </action>
+  <action name="actionMessages_to_me">
+   <property name="icon">
+    <iconset resource="resource1.qrc">
+     <normaloff>:/some/ico/ico/email-receive.png</normaloff>:/some/ico/ico/email-receive.png</iconset>
+   </property>
+   <property name="text">
+    <string>Messages to me</string>
+   </property>
+  </action>
+  <action name="actionMessages_from_me">
+   <property name="icon">
+    <iconset resource="resource1.qrc">
+     <normaloff>:/some/ico/ico/email-send.png</normaloff>:/some/ico/ico/email-send.png</iconset>
+   </property>
+   <property name="text">
+    <string>Messages from me</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="resource1.qrc">
+     <normaloff>:/some/ico/ico/exit.png</normaloff>:/some/ico/ico/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionQuit_and_reset">
+   <property name="text">
+    <string>Quit and reset all settings</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+Q</string>
+   </property>
+  </action>
+  <action name="actionFind">
+   <property name="icon">
+    <iconset resource="resource1.qrc">
+     <normaloff>:/some/ico/ico/search.png</normaloff>:/some/ico/ico/search.png</iconset>
+   </property>
+   <property name="text">
+    <string>Find</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+F</string>
+   </property>
+  </action>
+  <action name="actionDepartments">
+   <property name="text">
+    <string>Departments</string>
+   </property>
+  </action>
+  <action name="actionOrganizations">
+   <property name="text">
+    <string>Organizations</string>
+   </property>
+  </action>
+  <action name="actionUsers_work">
+   <property name="text">
+    <string>Users work</string>
+   </property>
+  </action>
+  <action name="actionComparing_in_AutoCAD">
+   <property name="text">
+    <string>Comparing in AutoCAD...</string>
+   </property>
+  </action>
+  <action name="actionEmployees">
+   <property name="text">
+    <string>Employees / users</string>
+   </property>
+  </action>
+  <action name="actionDeleted_documents">
+   <property name="icon">
+    <iconset resource="resource1.qrc">
+     <normaloff>:/some/ico/ico/trash.png</normaloff>:/some/ico/ico/trash.png</iconset>
+   </property>
+   <property name="text">
+    <string>Deleted documents</string>
+   </property>
+  </action>
+  <action name="actionChange_password">
+   <property name="text">
+    <string>Change password...</string>
+   </property>
+  </action>
+  <action name="actionDocuments_tree">
+   <property name="text">
+    <string>Documents tree</string>
+   </property>
+  </action>
+  <action name="actionSaved_documents">
+   <property name="text">
+    <string>Saved documents</string>
+   </property>
+  </action>
+  <action name="actionRestrictions_on_savings">
+   <property name="text">
+    <string>Restrictions on savings</string>
+   </property>
+  </action>
+  <action name="actionGeobases">
+   <property name="text">
+    <string>Geobases</string>
+   </property>
+  </action>
+  <action name="actionIncoming">
+   <property name="text">
+    <string>Incoming</string>
+   </property>
+  </action>
+  <action name="actionOutgouing">
+   <property name="text">
+    <string>Outgouing</string>
+   </property>
+  </action>
+  <action name="actionTemplates_for_outgoing">
+   <property name="text">
+    <string>Templates</string>
+   </property>
+  </action>
+  <action name="actionWeekly_report_old">
+   <property name="text">
+    <string>Weekly report (old)</string>
+   </property>
+  </action>
+  <action name="actionLetters_list">
+   <property name="text">
+    <string>Letters list</string>
+   </property>
+  </action>
+  <action name="actionProject_types">
+   <property name="text">
+    <string>Project types...</string>
+   </property>
+  </action>
+  <action name="actionContracts_2">
+   <property name="icon">
+    <iconset resource="resource1.qrc">
+     <normaloff>:/some/ico/ico/dollar.png</normaloff>:/some/ico/ico/dollar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Contracts</string>
+   </property>
+  </action>
+  <action name="actionImage_settings">
+   <property name="text">
+    <string>Image settings...</string>
+   </property>
+  </action>
+  <action name="actionSubcontracts">
+   <property name="icon">
+    <iconset resource="resource1.qrc">
+     <normaloff>:/some/ico/ico/dollar.png</normaloff>:/some/ico/ico/dollar.png</iconset>
+   </property>
+   <property name="text">
+    <string>Subcontracts</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="resource1.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionTile</sender>
+   <signal>triggered()</signal>
+   <receiver>mdiArea</receiver>
+   <slot>tileSubWindows()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCascade</sender>
+   <signal>triggered()</signal>
+   <receiver>mdiArea</receiver>
+   <slot>cascadeSubWindows()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionClose_all</sender>
+   <signal>triggered()</signal>
+   <receiver>mdiArea</receiver>
+   <slot>closeAllSubWindows()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNext</sender>
+   <signal>triggered()</signal>
+   <receiver>mdiArea</receiver>
+   <slot>activateNextSubWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPrevious</sender>
+   <signal>triggered()</signal>
+   <receiver>mdiArea</receiver>
+   <slot>activatePreviousSubWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>453</x>
+     <y>331</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
